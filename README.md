@@ -135,7 +135,8 @@ Ans) During a full VM boot, the number of exits increases steadily but not unifo
 
 ## Question 4
 Of the exit types, which are the most frequent? Least?
-Among the exit types, the most frequent is Exit Reason 30 (Unknown), which accounts for over a million exits during the VM's runtime, followed by Exit Reason 28 (Unknown) and Exit Reason 10 (CPUID).The least frequent exit reason is Exit Reason 0 (Exception or NMI).
+
+Ans) Among the exit types, the most frequent is Exit Reason 30 (Unknown), which accounts for over a million exits during the VM's runtime, followed by Exit Reason 28 (Unknown) and Exit Reason 10 (CPUID).The least frequent exit reason is Exit Reason 0 (Exception or NMI).
 
 
 
