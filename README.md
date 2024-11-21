@@ -16,7 +16,7 @@ Rinku took the lead in setting up the kernel. She ensured the base Linux kernel 
 
 Junie focused on implementing the required changes in the vmx.c and vmx.h file. This included adding the per-exit-type counters, global exit counters, and the vm_exit_reason_names array for human-readable mapping. She also ensured the kernel was modified correctly and verified the build process.
 
-Both Junie and Rinku worked together to test the modified kernel. Junnie set up and configured the virtualized environment, including the outer and inner VMs, and validated the kernel modifications by monitoring dmesg logs for exit statistics. Rinku supported the testing process by troubleshooting any configuration or environment-related issues.
+Both Junie and Rinku worked together to test the modified kernel. Junie set up and configured the virtualized environment, including the outer and inner VMs, and validated the kernel modifications by monitoring dmesg logs for exit statistics. Rinku supported the testing process by troubleshooting any configuration or environment-related issues.
 
 Rinku handled pushing the modified kernel source code to the GitHub repository, resolving any issues related to repository setup and permissions. She also took the lead in troubleshooting the Git operations and ensuring the code was properly version-controlled and ready for submission. Junie led the documentation process, creating a detailed README file explaining the steps followed, changes made, and results obtained.
 ## Question 2
