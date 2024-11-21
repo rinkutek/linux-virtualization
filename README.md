@@ -22,7 +22,7 @@ Rinku handled pushing the modified kernel source code to the GitHub repository, 
 ## Question 2
 ## Prerequisites
 
-You will need a working assignment 1 configuration(outer vm and inner vm). We did this assignment in gcp.
+You will need a working assignment 1 configuration(outer vm and inner vm). We did this assignment in gcp.[Click here to learn more](https://github.com/rinkutek/linux-virtualization/blob/main/Assignment%201_%20Virtual%20Machine%20_%20VMM%20Setup-1%20(1).pdf)
 ```bash
   gcloud compute ssh outer-vm
 ```
@@ -45,6 +45,7 @@ Configure the Kernel -> do enable (* or m for
 ```bash
   make menuconfig
 ```
+![App Screenshot](https://github.com/rinkutek/linux-virtualization/blob/main/screenshots/kernel.png)
 
 Rebuild the Kernel
 ```bash
@@ -71,7 +72,7 @@ Verify the running kernel:
   gcloud compute ssh outer-vm
   uname -r
 ```
-
+![App Screenshot](https://github.com/rinkutek/linux-virtualization/blob/main/screenshots/verifying%20modified%20kernel.png)
 ## Step- 2  Modifying the kernel
 Navigate to the KVM Source Code Directory
 ```bash
@@ -81,9 +82,14 @@ Modify the Exit Handler Function files under vmx.c and vmx.h
 ```bash
   nano arch/x86/kvm/vmx/vmx.c
 ```
+![App Screenshot](https://github.com/rinkutek/linux-virtualization/blob/main/screenshots/vmx.c-screenshot-1.png)
+![App Screenshot](https://github.com/rinkutek/linux-virtualization/blob/main/screenshots/vmx.c-screenshot-2.png)
+
 ```bash
   nano arch/x86/kvm/vmx/vmx.h
 ```
+![App Screenshot](https://github.com/rinkutek/linux-virtualization/blob/main/screenshots/vmx.h-screenshot.png)
+
 Build and Install the Modified Kernel
 ```bash
   cd linux
@@ -116,13 +122,13 @@ Run the inner VM inside the outer VM using your modified KVM
 ```bash
   sudo qemu-system-x86_64 -enable-kvm -hda l2-image.img -m 512 -netdev tap,id=mynet0,ifname=tap0,script=no -device virtio-net-pci,netdev=mynet0 -nographic
 ```
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rinkutek/linux-virtualization/blob/main/screenshots/Inner-VM.png)
 
 Periodically check the outer VM's dmesg logs to see the exit statistics being printed
 ```bash
   sudo dmesg
 ```
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/rinkutek/linux-virtualization/blob/main/screenshots/Statics.png)
 
 
 ## Question 3
