@@ -108,7 +108,10 @@ Verify if the updated KVM and tun module is loaded:
   lsmod | grep kvm
   lsmod | grep tun
 ```
-To run the inner vm command we do need l2-image.img which you can use any linux image. Will attach the image in the repo
+To run the inner vm command we do need l2-image.img(Should be present as per the first assignment)
+```bash
+  wget https://cloud-images.ubuntu.com/minimal/releases/focal/release/ubuntu-20.04-minimal-cloudimg-amd64.img -O l2-image.img
+```
 Run the inner VM inside the outer VM using your modified KVM 
 ```bash
   sudo qemu-system-x86_64 -enable-kvm -hda l2-image.img -m 512 -netdev tap,id=mynet0,ifname=tap0,script=no -device virtio-net-pci,netdev=mynet0 -nographic
